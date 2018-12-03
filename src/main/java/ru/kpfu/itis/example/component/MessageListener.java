@@ -13,9 +13,8 @@ public class MessageListener {
     private Random random = new Random();
 
     @RabbitListener(queues = "queue-example-2")
-    public void worker1(String message) throws InterruptedException {
-        log.info("Worker #1. Received: {}", message);
-        Thread.sleep(100 * random.nextInt(20));
+    public void worker1(String message) {
+        throw new IllegalStateException();
     }
 
     @RabbitListener(queues = "queue-example-2")
@@ -23,5 +22,4 @@ public class MessageListener {
         log.info("Worker #2. Received: {}", message);
         Thread.sleep(100 * random.nextInt(20));
     }
-
 }
