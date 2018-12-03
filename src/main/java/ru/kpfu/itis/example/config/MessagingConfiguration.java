@@ -9,6 +9,6 @@ public class MessagingConfiguration {
 
     @Bean
     public Queue myQueue1() {
-        return new Queue("queue-example-1");
+        return new Queue("queue-example-2");
     }
 }
