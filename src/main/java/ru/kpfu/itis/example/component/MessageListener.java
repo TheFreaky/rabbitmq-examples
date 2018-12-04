@@ -14,7 +14,9 @@ public class MessageListener {
 
     @RabbitListener(queues = "queue-example-2")
     public void worker1(String message) {
-        throw new IllegalStateException();
+//        throw new IllegalStateException();
+        // Will not be redelivered
+        throw new ClassCastException();
     }
 
     @RabbitListener(queues = "queue-example-2")
