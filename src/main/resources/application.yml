@@ -3,11 +3,6 @@ spring:
     username: guest
     password: guest
     host: localhost
-    listener:
-      direct:
-        prefetch: 0
-      simple:
-        prefetch: 0
 
 server:
   port: 8080
