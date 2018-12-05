@@ -18,7 +18,7 @@ public class SampleController {
     public String sendMessageToQueue(@RequestParam(name = "message") String message) {
         log.info("Send message to queue");
         for (int i = 0; i < 10; i++) {
-            rabbitTemplate.convertAndSend("queue-example-2", message + " " + i);
+            rabbitTemplate.convertAndSend("fanout-exchange-example", "", message + " " + i);
         }
         return "Message has been send";
     }
